@@ -1,0 +1,26 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int update(int *a,int *b){
+    int temp = *a;
+    *a = *a + *b;
+    *b = temp - *b;
+    
+    return *a,*b;
+}
+int main() {
+   
+  int a;
+  int b;
+  
+  cin>>a;
+  cin>>b;
+  
+update(&a,&b);
+
+cout<<a<<endl;
+cout<<abs(b)<<endl;
+
+    return 0;
+}
