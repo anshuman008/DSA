@@ -1,0 +1,18 @@
+int getNode(SinglyLinkedListNode* head, int positionFromTail) {
+   if(head == nullptr) return -1;
+SinglyLinkedListNode* ptr1 = head;
+SinglyLinkedListNode* ptr2 = head;
+int counter = 0;
+int forward = 0;
+
+while(ptr1->next != NULL){
+    forward++;
+    ptr1 = ptr1->next;
+    if(forward-counter>positionFromTail){
+        ptr2 = ptr2->next;
+        counter++;
+    }
+}
+return ptr2->data;
+
+}
