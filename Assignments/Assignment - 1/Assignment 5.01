@@ -1,0 +1,13 @@
+SinglyLinkedListNode* removeDuplicates(SinglyLinkedListNode* llist) {
+if(llist == NULL || llist -> next == NULL){
+    return llist;
+}
+SinglyLinkedListNode * new_head = removeDuplicates(llist->next);
+if(new_head->data == llist->data){
+    return new_head;
+}
+else{
+    llist->next = new_head;
+    return llist;
+}
+}
