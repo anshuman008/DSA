@@ -1,0 +1,18 @@
+class Solution {
+public:
+
+   vector<int> ans;
+
+   void triverse(TreeNode* root){
+       if(root == NULL){
+           return;
+       }
+       triverse(root->left);
+       triverse(root->right);
+        ans.push_back(root->val);
+   }
+    vector<int> postorderTraversal(TreeNode* root) {
+        triverse(root);
+        return ans;
+    }
+};
